@@ -41,24 +41,24 @@ import com.github.fge.jackson.JsonLoader;
 
 /**********************************************************************************
  * This class includes JUnit test cases for both Bid_Request and Bid_Response JSon*
- * Schemas for OpenRtb validator version 2.4 for all the examples available in the*
- * folder 'src/test/resources/v2_4'. These examples are taken from the resource:- *
- * OpenRTB-API-Specification-Version-2-4-FINAL.pdf. 							  *
+ * Schemas for OpenRtb validator version 2.5 for all the examples available in the*
+ * folder 'src/test/resources/v2_5'. These examples are taken from the resource:- *
+ * OpenRTB-API-Specification-Version-2-5-FINAL.pdf. 							    *
  *********************************************************************************/
 
-public class OpenRtbValidatorV2_4Tests {
+public class OpenRtbValidatorV2_5Tests {
 
-	private static final Logger logger = LoggerFactory.getLogger(OpenRtbValidatorV2_4Tests.class);
+	private static final Logger logger = LoggerFactory.getLogger(OpenRtbValidatorV2_5Tests.class);
 
 	/**
 	 * GIVEN:   JSon data formats for Bid_Request for different ads.
 	 * RETURNS: asserts true if the given Bid_Response example is valid according 
-	 *          to the Bid_Request JSon Schema for OpenRtb version 2.4.
+	 *          to the Bid_Request JSon Schema for OpenRtb version 2.5.
 	 **/
 	@Test
 	public void testBidRequestExample1SimpleBanner() throws IOException {
-		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_REQUEST, OpenRtbVersion.V2_4);
-		String resource = "/v2_4/bid_requests/example1_simple_banner.json";
+		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_REQUEST, OpenRtbVersion.V2_5);
+		String resource = "/v2_5/bid_requests/example1_simple_banner.json";
 		ValidationResult result = validator.validate(JsonLoader.fromResource(resource));
 		logger.info("validation result: " + result);
 		assertTrue(resource + " is not valid", result.isValid());
@@ -66,8 +66,8 @@ public class OpenRtbValidatorV2_4Tests {
 
 	@Test
 	public void testBidRequestExample2ExpandableCreative() throws IOException {
-		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_REQUEST, OpenRtbVersion.V2_4);
-		String resource = "/v2_4/bid_requests/example2_expandable_creative.json";
+		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_REQUEST, OpenRtbVersion.V2_5);
+		String resource = "/v2_5/bid_requests/example2_expandable_creative.json";
 		ValidationResult result = validator.validate(JsonLoader.fromResource(resource));
 		logger.info("validation result: " + result);
 		assertTrue(resource + " is not valid", result.isValid());
@@ -75,8 +75,8 @@ public class OpenRtbValidatorV2_4Tests {
 
 	@Test
 	public void testBidRequestExample3Mobile() throws IOException {
-		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_REQUEST, OpenRtbVersion.V2_4);
-		String resource = "/v2_4/bid_requests/example3_mobile.json";
+		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_REQUEST, OpenRtbVersion.V2_5);
+		String resource = "/v2_5/bid_requests/example3_mobile.json";
 		ValidationResult result = validator.validate(JsonLoader.fromResource(resource));
 		logger.info("validation result: " + result);
 		assertTrue(resource + " is not valid", result.isValid());
@@ -84,8 +84,8 @@ public class OpenRtbValidatorV2_4Tests {
 
 	@Test
 	public void testBidRequestExample4Video() throws IOException {
-		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_REQUEST, OpenRtbVersion.V2_4);
-		String resource = "/v2_4/bid_requests/example4_video.json";
+		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_REQUEST, OpenRtbVersion.V2_5);
+		String resource = "/v2_5/bid_requests/example4_video.json";
 		ValidationResult result = validator.validate(JsonLoader.fromResource(resource));
 		logger.info("validation result: " + result);
 		assertTrue(resource + " is not valid", result.isValid());
@@ -93,8 +93,8 @@ public class OpenRtbValidatorV2_4Tests {
 
 	@Test
 	public void testBidRequestExample5PmpWithDirectDeal() throws IOException {
-		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_REQUEST, OpenRtbVersion.V2_4);
-		String resource = "/v2_4/bid_requests/example5_pmp_with_direct_deal.json";
+		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_REQUEST, OpenRtbVersion.V2_5);
+		String resource = "/v2_5/bid_requests/example5_pmp_with_direct_deal.json";
 		ValidationResult result = validator.validate(JsonLoader.fromResource(resource));
 		logger.info("validation result: " + result);
 		assertTrue(resource + " is not valid", result.isValid());
@@ -102,8 +102,8 @@ public class OpenRtbValidatorV2_4Tests {
 
 	@Test
 	public void testBidRequestExample6NativeAd() throws IOException {
-		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_REQUEST, OpenRtbVersion.V2_4);
-		String resource = "/v2_4/bid_requests/example6_native_ad.json";
+		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_REQUEST, OpenRtbVersion.V2_5);
+		String resource = "/v2_5/bid_requests/example6_native_ad.json";
 		ValidationResult result = validator.validate(JsonLoader.fromResource(resource));
 		logger.info("validation result: " + result);
 		assertTrue(resource + " is not valid", result.isValid());
@@ -112,12 +112,12 @@ public class OpenRtbValidatorV2_4Tests {
 	/**
 	 * GIVEN:   JSon data formats for Bid_Response for different ads.
 	 * RETURNS: asserts true if the given Bid_Response example is valid according 
-	 *          to the Bid_Response JSon Schema for openrtb version 2.4.
+	 *          to the Bid_Response JSon Schema for openrtb version 2.5.
 	 **/
 	@Test
 	public void testBidResponseExample1AdServedOnWinNotice() throws IOException {
-		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_RESPONSE, OpenRtbVersion.V2_4);
-		String resource = "/v2_4/bid_responses/example1_ad_served_on_win_notice.json";
+		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_RESPONSE, OpenRtbVersion.V2_5);
+		String resource = "/v2_5/bid_responses/example1_ad_served_on_win_notice.json";
 		ValidationResult result = validator.validate(JsonLoader.fromResource(resource));
 		logger.info("validation result: " + result);
 		assertTrue(resource + " is not valid", result.isValid());
@@ -125,8 +125,8 @@ public class OpenRtbValidatorV2_4Tests {
 
 	@Test
 	public void testBidResponseExample2VastXmlDocumentReturnedInline() throws IOException {
-		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_RESPONSE, OpenRtbVersion.V2_4);
-		String resource = "/v2_4/bid_responses/example2_vast_xml_document_returned_inline.json";
+		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_RESPONSE, OpenRtbVersion.V2_5);
+		String resource = "/v2_5/bid_responses/example2_vast_xml_document_returned_inline.json";
 		ValidationResult result = validator.validate(JsonLoader.fromResource(resource));
 		logger.info("validation result: " + result);
 		assertTrue(resource + " is not valid", result.isValid());
@@ -134,8 +134,8 @@ public class OpenRtbValidatorV2_4Tests {
 
 	@Test
 	public void testBidResponseExample3DirectDealAdServedOnWinNotice() throws IOException {
-		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_RESPONSE, OpenRtbVersion.V2_4);
-		String resource = "/v2_4/bid_responses/example3_direct_deal_ad_served_on_win_notice.json";
+		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_RESPONSE, OpenRtbVersion.V2_5);
+		String resource = "/v2_5/bid_responses/example3_direct_deal_ad_served_on_win_notice.json";
 		ValidationResult result = validator.validate(JsonLoader.fromResource(resource));
 		logger.info("validation result: " + result);
 		assertTrue(resource + " is not valid", result.isValid());
@@ -143,8 +143,8 @@ public class OpenRtbValidatorV2_4Tests {
 
 	@Test
 	public void testBidResponseExample4NativeMarkupReturnedInline() throws IOException {
-		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_RESPONSE, OpenRtbVersion.V2_4);
-		String resource = "/v2_4/bid_responses/example4_native_markup_returned_inline.json";
+		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(OpenRtbInputType.BID_RESPONSE, OpenRtbVersion.V2_5);
+		String resource = "/v2_5/bid_responses/example4_native_markup_returned_inline.json";
 		ValidationResult result = validator.validate(JsonLoader.fromResource(resource));
 		logger.info("validation result: " + result);
 		assertTrue(resource + " is not valid", result.isValid());

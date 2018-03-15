@@ -115,6 +115,18 @@ public final class OpenRtbValidatorFactory {
 	private static final OpenRtbValidator BID_RESPONSE_V2_4 = new GenericOpenRtbValidator("/schemas/openrtb-schema_bid-response_v2-4.json");
    
 	/**
+	 * An OpenRTB bid request v2.5 validator.
+	 *  @see <a href="https://www.iab.com/wp-content/uploads/2016/03/OpenRTB-API-Specification-Version-2-5-FINAL.pdf">https://www.iab.com/wp-content/uploads/2016/03/OpenRTB-API-Specification-Version-2-5-FINAL.pdf</a>
+	 */
+	private static final OpenRtbValidator BID_REQUEST_V2_5 = new GenericOpenRtbValidator("/schemas/openrtb-schema_bid-request_v2-5.json");
+	
+	/**
+	 * An OpenRTB bid response v2.5 validator.
+	 *  @see <a href="https://www.iab.com/wp-content/uploads/2016/03/OpenRTB-API-Specification-Version-2-5-FINAL.pdf">https://www.iab.com/wp-content/uploads/2016/03/OpenRTB-API-Specification-Version-2-5-FINAL.pdf</a>
+	 */
+	private static final OpenRtbValidator BID_RESPONSE_V2_5 = new GenericOpenRtbValidator("/schemas/openrtb-schema_bid-response_v2-5.json");
+
+	/**
      * Returns an OpenRTB validator of a specific type and version.
      * 
      * @param type
@@ -145,6 +157,9 @@ public final class OpenRtbValidatorFactory {
 				break;
 			case V2_4:
 				validator = OpenRtbInputType.BID_REQUEST.equals(type) ? BID_REQUEST_V2_4 : BID_RESPONSE_V2_4;
+				break;
+			case V2_5:
+				validator = OpenRtbInputType.BID_REQUEST.equals(type) ? BID_REQUEST_V2_5 : BID_RESPONSE_V2_5;
 				break;
 			}
 		}

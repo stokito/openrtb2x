@@ -60,6 +60,9 @@ public class OpenRtb2_4BidRequestResponseSteps {
 	{
 		switch(version)
 		{
+		case "2.5":
+			openRtbVersion = OpenRtbVersion.V2_5;
+			break;
 		case "2.4":
 			openRtbVersion = OpenRtbVersion.V2_4;
 			break;
