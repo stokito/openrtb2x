@@ -70,6 +70,7 @@ public class ValidatorMain {
 		System.out.println("4. V2_2 ");
 		System.out.println("5. V2_3 ");
 		System.out.println("6. V2_4 ");
+		System.out.println("7. V2_5 ");
 
 		HashMap<Integer, OpenRtbVersion> m_openRtbVersion = new HashMap<Integer, OpenRtbVersion>();
 		m_openRtbVersion.put(1, OpenRtbVersion.V1_0);
@@ -78,6 +79,7 @@ public class ValidatorMain {
 		m_openRtbVersion.put(4, OpenRtbVersion.V2_2);
 		m_openRtbVersion.put(5, OpenRtbVersion.V2_3);
 		m_openRtbVersion.put(6, OpenRtbVersion.V2_4);
+		m_openRtbVersion.put(7, OpenRtbVersion.V2_5);
 		version = m_openRtbVersion.get(input.nextInt());
 
 		OpenRtbValidator validator = OpenRtbValidatorFactory.getValidator(type, version);

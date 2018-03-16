@@ -1,10 +1,19 @@
-Feature: Validation of Bid Request payload for OpenRtb version 1.0, 2.0, 2.1, 2.2, 2.3 and 2.4
+Feature: Validation of Bid Request payload for OpenRtb version 1.0, 2.0, 2.1, 2.2, 2.3, 2.4 and 2.5
 
   Scenario Outline: to validate input bid request using openRtb Validator
     Given a bid request json input <bidRequest> to be validated
     When an openRtb validator version <version> runs validation on given bid request
     Then a valid result is returned by the validator
 
+		Examples: 
+      | bidRequest                                              | version |
+      | "/v2_5/bid_requests/example1_simple_banner.json"        | "2.5"   |
+      | "/v2_5/bid_requests/example2_expandable_creative.json"  | "2.5"   |
+      | "/v2_5/bid_requests/example3_mobile.json"               | "2.5"   |
+      | "/v2_5/bid_requests/example4_video.json"                | "2.5"   |
+      | "/v2_5/bid_requests/example5_pmp_with_direct_deal.json" | "2.5"   |
+      | "/v2_5/bid_requests/example6_native_ad.json"            | "2.5"   |
+      
     Examples: 
       | bidRequest                                              | version |
       | "/v2_4/bid_requests/example1_simple_banner.json"        | "2.4"   |
