@@ -26,9 +26,6 @@
                 "plcmtcnt": {
                     "$ref": "#/definitions/positive_int"
                 },
-                "plcmtcnt": {
-                    "$ref": "#/definitions/positive_int"
-                },
                 "seq": {
                     "$ref": "#/definitions/positive_int"
                 },
